@@ -1,40 +1,235 @@
 <!DOCTYPE html>
 <html lang="id">
-	<head>
-    	<title>Ini title di Browser</title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riantoby - Fhams & KMAY Punya Cerita</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-	<body style="text-align: center;">
+        body {
+            text-align: center;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+        }
 
-    	<h1 style="background-color: pink;">Riantoby-Fhams</h1>
-		<hr>
+        .fade-in {
+            opacity: 1; 
+            transform: translateY(0);
+            animation: fadeIn 1s ease-out;
+        }
 
-    	<img src="Gambar.jpg" alt="Gambar" width="300"><br>
+        .family-section {
+            background-color: white;
+            padding: 30px;
+            max-width: 900px;
+            margin: 50px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
 
-		<p>Perkenalkan saya <b>Tia Riantoby.</b></p>
-		<p><i>Saya anak ke-2 dari 3 bersaudara. Hobi saya jalan-jalan, tapi gak tahu mau ke mana. Intinya jalan-jalan aja cari angin, <sup>xixi :)</sup></i></p>
-		<p>Saya memiliki satu lagu kesukaan dengan judul "Who Says"</p>
-		<p style="color: palevioletred;">Saya akan memberikan link lagunya <a href = "https://youtu.be/BzE1mX4Px0I?si=MrsVu5k3TmXQr7eu" target = "_blank"> "Silahkan klik di sini:)"</a></p>
-		<p style="font-size: 19px;"><b>Orang tua saya Puji Tuhan masih lengkap, jadi ketika libur saya bisa berkumpul bersama keluarga.</b></p>
+        h1 {
+            background-color: pink;
+            padding: 15px;
+            border-radius: 10px;
+        }
 
-   		<p><u><b>Keluarga saya memang sederhana</b></u>, tetapi dari kesederhanaan itu saya dibentuk menjadi anak yang menghormati orang tua, tidak penuntut, rajin berdoa, rajin beres-beres rumah, suka berbagi, dan selalu mengandalkan Tuhan dalam segala hal, <sup>hehe :)</sup></p>
+        h2 {
+            background-color: lightblue;
+            padding: 5px;
+            border-radius: 15px;
+        }
 
-		<p style="color: chocolate;"><b>Dan dari kesederhanaan itu juga, keluarga saya hidup bahagia sampai sekarang.</b></p>
+        img {
+            width: 300px;
+            border-radius: 10px;
+            margin: 15px 0;
+            transition: transform 0.3s ease-in-out;
+        }
 
-		<h2 style = "background-color : lightblue; margin-top: 20px; font-size: 22px;">Data Riantoby Fhams</h2>
-		<table align = "center" border = "1" cellpadding = "10" cellspacing = "0">
-			<tr>
-				<th>No</th>
-				<th>Nama</th>
-				<th>Status</th>
-				<th>Usia (2025)</th>
-			</tr>
-			<tr><td>1</td> <td>Ae</td> <td>Bapak</td> <td>68 Tahun</td></tr>
-			<tr><td>2</td> <td>Be</td> <td>Ibu</td> <td>55 Tahun</td></tr>
-			<tr><td>3</td> <td>Ce</td> <td>Anak Pertama</td> <td>24 Tahun</td></tr>
-			<tr><td>4</td> <td>De</td> <td>Anak Kedua</td> <td>21 Tahun</td></tr>
-			<tr><td>5</td> <td>Ee</td> <td>Anak Ketiga (Bungsu)</td> <td>16 Tahun</td></tr>
-		</table>
+        img:hover {
+            transform: scale(1.05);
+        }
 
-	</body>
+        .separator {
+            margin: 50px auto;
+            width: 80%;
+            height: 5px;
+            background: linear-gradient(to right, pink, lightblue, chocolate);
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f4b5c3;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: palevioletred;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .kmay-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Gambar.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 50px 20px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 40px auto;
+            opacity: 1; 
+        }
+
+        .kmay-header {
+            background: rgba(248, 176, 124, 0.9);
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .kmay-logo {
+            width: 200px; 
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .kmay-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.3);
+            text-align: justify;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .kmay-container:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .family-section, .kmay-section {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="family-section fade-in">
+        <h1>Riantoby-Fhams</h1>
+        <img src="Gambarr.jpg" alt="Foto Riantoby">
+        <p style="text-align: center;">Perkenalkan, saya</p>
+<p style="text-align: center;"><b>Tia Riantoby.</b></p>
+
+<p style="text-align: justify;">
+    Saya anak ke-2 dari 3 bersaudara. Hobi saya jalan-jalan, tapi gak tahu mau ke mana. 
+    Intinya jalan-jalan aja cari angin, xixi :) 
+    <p style="text-align: justify;">Saya memiliki satu lagu kesukaan dengan judul "Who Says".
+    </p>
+</p>
+
+<p>
+    <a href="https://youtu.be/BzE1mX4Px0I?si=MrsVu5k3TmXQr7eu" target="_blank">Silahkan klik link lagu di sini :)</a>
+</p>
+
+<p style="text-align: justify;">
+    Orang tua saya Puji Tuhan masih lengkap, jadi ketika libur saya bisa berkumpul bersama keluarga. 
+    Keluarga saya memang sederhana, tetapi dari kesederhanaan itu saya dibentuk menjadi anak yang menghormati 
+    orang tua, tidak penuntut, rajin berdoa, rajin beres-beres rumah, suka berbagi, dan selalu mengandalkan Tuhan dalam segala hal, hehe :) 
+    Dan dari kesederhanaan itu juga, keluarga saya hidup bahagia sampai sekarang.
+</p>
+
+        <h2>Data Riantoby Fhams</h2>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Status</th>
+                <th>Usia (2025)</th>
+            </tr>
+            <tr>
+                <td>1</td> 
+                <td>Ae</td> 
+                <td>Bapak</td> 
+                <td>68 Tahun</td>
+            </tr>
+            <tr>
+                <td>2</td> 
+                <td>Be</td> 
+                <td>Ibu</td> 
+                <td>55 Tahun</td>
+            </tr>
+            <tr>
+                <td>3</td> 
+                <td>Ce</td> 
+                <td>Anak Pertama</td> 
+                <td>24 Tahun</td>
+            </tr>
+            <tr>
+                <td>4</td> 
+                <td>De</td> 
+                <td>Anak Kedua</td> 
+                <td>21 Tahun</td>
+            </tr>
+            <tr>
+                <td>5</td> 
+                <td>Ee</td> 
+                <td>Anak Ketiga (Bungsu)</td> 
+                <td>16 Tahun</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="separator fade-in"></div>
+
+    <div class="kmay-section fade-in">
+        <div class="kmay-header">KMAY Punya Cerita</div>
+        <img src="kmay.jpg" alt="Logo KMAY" class="kmay-logo">
+        <div class="kmay-container">
+            <p><b>Keluarga Mahasiswa Adonara Yogyakarta KMAY</b>.</p>
+            <p>
+                Keluarga Mahasiswa Adonara Yogyakarta  atau biasa disebut dengan KMAY. Awalnya, organisasi ini bernama Keluarga Nusa Tadon Adonara (KNTA) sebelum kemudian berubah menjadi Keluarga Mahasiswa Adonara Yogyakarta (KMAY). KMAY didirikan pada tahun 1997 dan terus berkembang hingga saat ini, tahun 2025, serta akan terus berlanjut di masa yang akan datang.
+            </p>
+            <p>
+                KMAY adalah organisasi mahasiswa yang berasal dari Adonara, Flores Timur, dan sedang menempuh pendidikan di Yogyakarta. Organisasi ini berfungsi sebagai wadah untuk mempererat tali persaudaraan, berbagi pengalaman, serta mendukung anggotanya dalam berbagai aspek, baik akademik, sosial, maupun budaya.
+            </p>
+            <p>
+                Dalam menjalankan kegiatannya, KMAY memiliki struktur kepengurusan inti yang dipimpin oleh seorang ketua. Ketua ini dipilih melalui Musyawarah Anggota Tahunan (MANTA), yang diadakan setiap tahun menjelang berakhirnya periode kepengurusan. Melalui kepengurusan ini, KMAY rutin mengadakan berbagai kegiatan, seperti perayaan malam tahun baru, olahraga bersama, diskusi, serta acara budaya yang bertujuan memperkenalkan adat dan tradisi Adonara di Yogyakarta.
+            </p>
+            <p>
+                Sebagai sebuah organisasi, KMAY tidak hanya menjadi tempat berkumpul, tetapi juga menjadi ruang bagi mahasiswa Adonara untuk saling mendukung dan berkembang selama menempuh pendidikan di perantauan.
+            </p>
+        </div>
+    </div>
+
+</body>
 </html>
